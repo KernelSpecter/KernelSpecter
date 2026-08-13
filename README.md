@@ -34,6 +34,14 @@ the hardware will cover for you.
 <a href="https://github.com/KernelSpecter/mochi"><img alt="mochi" src="https://opengraph.githubassets.com/1/KernelSpecter/mochi"></a>
 </td>
 </tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/KernelSpecter/anicli-rpc"><img alt="anicli-rpc" src="https://opengraph.githubassets.com/1/KernelSpecter/anicli-rpc"></a>
+</td>
+<td width="50%">
+<a href="https://github.com/KernelSpecter/Cadence"><img alt="Cadence" src="https://opengraph.githubassets.com/1/KernelSpecter/Cadence"></a>
+</td>
+</tr>
 </table>
 
 **[hidforge](https://github.com/KernelSpecter/hidforge)** holds an exact click rate
@@ -55,6 +63,11 @@ core.
 **[mochi](https://github.com/KernelSpecter/mochi)** is a cat that lives on your
 desktop, watches you work, and expects to be fed.
 
+**[anicli-rpc](https://github.com/KernelSpecter/anicli-rpc)** puts whatever you're
+watching on your Discord profile, live, by sitting between ani-cli and mpv without
+patching either of them. Sub or dub is deduced from the audio track's language tag,
+because ani-cli picks one and then never tells the player which.
+
 **[Cadence](https://github.com/KernelSpecter/Cadence)** is a to-do app built around
 the more interesting question: why you stop opening to-do apps.
 
@@ -65,6 +78,10 @@ Learning cybersecurity properly, rather than by tutorial.
 Reading an unreasonable amount of Win32 documentation as a side effect of hidforge:
 Raw Input, HID report descriptors, and exactly how much a `QueryPerformanceCounter`
 spin loop costs you.
+
+Local IPC, lately. Discord frames its messages with an 8-byte header, mpv speaks
+line-delimited JSON, and underneath both it is named pipes on Windows or Unix sockets
+on Linux, which are far less interchangeable than they look.
 
 ---
 
