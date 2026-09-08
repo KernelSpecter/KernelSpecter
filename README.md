@@ -21,26 +21,26 @@ extensions. Everything here runs offline unless the whole point of it is a netwo
 <table>
 <tr>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/hidforge"><img alt="hidforge" src="https://opengraph.githubassets.com/2/KernelSpecter/hidforge"></a>
+<a href="https://github.com/KernelSpecter/hidforge"><img alt="hidforge" src="https://opengraph.githubassets.com/1/KernelSpecter/hidforge"></a>
 </td>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/AirLock"><img alt="AirLock" src="https://opengraph.githubassets.com/2/KernelSpecter/AirLock"></a>
-</td>
-</tr>
-<tr>
-<td width="50%">
-<a href="https://github.com/KernelSpecter/quorum"><img alt="quorum" src="https://opengraph.githubassets.com/2/KernelSpecter/quorum"></a>
-</td>
-<td width="50%">
-<a href="https://github.com/KernelSpecter/fretwork"><img alt="fretwork" src="https://opengraph.githubassets.com/2/KernelSpecter/fretwork"></a>
+<a href="https://github.com/KernelSpecter/AirLock"><img alt="AirLock" src="https://opengraph.githubassets.com/1/KernelSpecter/AirLock"></a>
 </td>
 </tr>
 <tr>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/nowwatching"><img alt="nowwatching" src="https://opengraph.githubassets.com/2/KernelSpecter/nowwatching"></a>
+<a href="https://github.com/KernelSpecter/quorum"><img alt="quorum" src="https://opengraph.githubassets.com/1/KernelSpecter/quorum"></a>
 </td>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/AutoDelete"><img alt="AutoDelete" src="https://opengraph.githubassets.com/2/KernelSpecter/AutoDelete"></a>
+<a href="https://github.com/KernelSpecter/fretwork"><img alt="fretwork" src="https://opengraph.githubassets.com/1/KernelSpecter/fretwork"></a>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/KernelSpecter/nowwatching"><img alt="nowwatching" src="https://opengraph.githubassets.com/1/KernelSpecter/nowwatching"></a>
+</td>
+<td width="50%">
+<a href="https://github.com/KernelSpecter/AutoDelete"><img alt="AutoDelete" src="https://opengraph.githubassets.com/1/KernelSpecter/AutoDelete"></a>
 </td>
 </tr>
 </table>
