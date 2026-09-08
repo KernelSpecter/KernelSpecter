@@ -29,7 +29,7 @@ extensions. Everything here runs offline unless the whole point of it is a netwo
 </tr>
 <tr>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/quorum"><img alt="quorum" src="https://opengraph.githubassets.com/1/KernelSpecter/quorum"></a>
+<a href="https://github.com/KernelSpecter/Alife"><img alt="Alife" src="https://opengraph.githubassets.com/1/KernelSpecter/Alife"></a>
 </td>
 <td width="50%">
 <a href="https://github.com/KernelSpecter/fretwork"><img alt="fretwork" src="https://opengraph.githubassets.com/1/KernelSpecter/fretwork"></a>
