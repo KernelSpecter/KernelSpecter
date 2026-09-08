@@ -57,12 +57,6 @@ pre-commit hook, plus a
 the paste itself. Entirely local, no network calls, which is rather the whole point
 of a tool for not leaking things.
 
-**[quorum](https://github.com/KernelSpecter/quorum)** takes attendance from a signed
-token the room hears at 19 kHz, with no GPS, no camera and no box on the wall. It
-does not claim to stop one student carrying five friends' phones, because no audio
-scheme ever has. It claims to notice: the same devices in the same room every day for
-three weeks is a signature, and that goes in a report.
-
 **[fretwork](https://kernelspecter.github.io/fretwork/)** is a playable guitar in a
 single HTML file. Six coupled digital waveguides in an AudioWorklet, no recorded
 samples anywhere. It opens in a browser, so it is the quickest thing here to try.
@@ -96,7 +90,6 @@ the more interesting question: why you stop opening to-do apps.
 | [hidforge](https://github.com/KernelSpecter/hidforge) | Rust | Device-agnostic Windows macro engine. Learns what a button emits, replays with real timing |
 | [AirLock](https://github.com/KernelSpecter/AirLock) | Python | Local-first CLI that redacts secrets and PII out of any text before you paste it |
 | [AirLock-extension](https://github.com/KernelSpecter/AirLock-extension) | JavaScript | The same rules in the browser, catching the paste into an AI chat as it happens |
-| [quorum](https://github.com/KernelSpecter/quorum) | HTML, DSP | Attendance from a signed ultrasonic token, with no location, camera or hardware |
 | [fretwork](https://github.com/KernelSpecter/fretwork) | HTML, Web Audio | A playable guitar in one file. Six coupled waveguides, no samples. [Try it](https://kernelspecter.github.io/fretwork/) |
 | [nowwatching](https://github.com/KernelSpecter/nowwatching) | Python | Discord Rich Presence for anything playing on the machine. No API key |
 | [anicli-rpc](https://github.com/KernelSpecter/anicli-rpc) | Python | Discord Rich Presence for ani-cli. Title, episode, sub or dub, countdown, cover art |
@@ -104,10 +97,8 @@ the more interesting question: why you stop opening to-do apps.
 | [Alife](https://github.com/KernelSpecter/Alife) | Python | Micro-organisms that learn to survive inside one lifetime, on one CPU core |
 | [mochi](https://github.com/KernelSpecter/mochi) | Python | A cat that lives on your desktop and expects to be fed |
 | [Cadence](https://github.com/KernelSpecter/Cadence) | Android | A to-do list app you would actually come back to |
-| [skribbl-oracle](https://github.com/KernelSpecter/skribbl-oracle) | JavaScript | Word helper, chat typeahead and crowd-reading ranker for skribbl.io |
 | [autoclicker](https://github.com/KernelSpecter/autoclicker) | AutoHotkey | 53 clicks per second, not adjustable |
 | [python-school-work](https://github.com/KernelSpecter/python-school-work) | Python | Coursework, kept in one place |
-| [quest](https://github.com/KernelSpecter/quest) | JavaScript | |
 | [WordDash-discord-bot-local-deployment-](https://github.com/KernelSpecter/WordDash-discord-bot-local-deployment-) | Python | |
 | [discod-bot-web-deployment](https://github.com/KernelSpecter/discod-bot-web-deployment) | Python | |
 
