@@ -8,9 +8,8 @@
 
 I build small tools. Most of them run on your own machine and don't talk to anybody.
 
-I work off a laptop with no graphics card worth the name. Turns out that's a good
-teacher. When you can't throw hardware at a problem, you have to go and find out what
-the thing actually costs.
+I'd rather find out what a thing actually costs than take somebody's word for it.
+Most of what's here got built because I wanted to see how the inside worked.
 
 <sub>Rust, Python, TypeScript, JavaScript. Windows and Linux plumbing, sound, browser
 extensions. If it doesn't need the network, it doesn't touch it.</sub>
