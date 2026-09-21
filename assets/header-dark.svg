@@ -5,7 +5,7 @@
     <text x="56" y="92" font-size="60" font-weight="700" fill="#E8EDF2"
           textLength="440" lengthAdjust="spacingAndGlyphs">KernelSpecter</text>
     <text x="56" y="128" font-size="19" fill="#8B949E"
-          textLength="430" lengthAdjust="spacingAndGlyphs">local-first tools, measured not assumed</text>
+          textLength="430" lengthAdjust="spacingAndGlyphs">small tools that stay on your machine</text>
   </g>
 
   <line x1="56" y1="152" x2="944" y2="152" stroke="#2C333C" stroke-width="1"/>

@@ -2,34 +2,33 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-    <img src="assets/header-light.svg" alt="KernelSpecter. Local-first tools, measured not assumed." width="830">
+    <img src="assets/header-light.svg" alt="KernelSpecter. Small tools that stay on your machine." width="830">
   </picture>
 </p>
 
-I build local-first tools. They run on your own machine, at a footprint you can
-measure, and they don't phone home.
+I build small tools. Most of them run on your own machine and don't talk to anybody.
 
-Mostly Rust and Python on a CPU-only laptop, which turns out to be a useful
-constraint. It forces you to find out what things actually cost instead of assuming
-the hardware will cover for you.
+I work off a laptop with no graphics card worth the name. Turns out that's a good
+teacher. When you can't throw hardware at a problem, you have to go and find out what
+the thing actually costs.
 
-<sub>Rust, Python, TypeScript, JavaScript. Win32 and Linux IPC, DSP, browser
-extensions. Everything here runs offline unless the whole point of it is a network.</sub>
+<sub>Rust, Python, TypeScript, JavaScript. Windows and Linux plumbing, sound, browser
+extensions. If it doesn't need the network, it doesn't touch it.</sub>
 
-## Projects
+## The ones I'd show you first
 
 <table>
 <tr>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/hidforge"><img alt="hidforge" src="https://opengraph.githubassets.com/1/KernelSpecter/hidforge"></a>
+<a href="https://github.com/KernelSpecter/marquee"><img alt="marquee" src="https://opengraph.githubassets.com/1/KernelSpecter/marquee"></a>
 </td>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/AirLock"><img alt="AirLock" src="https://opengraph.githubassets.com/1/KernelSpecter/AirLock"></a>
+<a href="https://github.com/KernelSpecter/hidforge"><img alt="hidforge" src="https://opengraph.githubassets.com/1/KernelSpecter/hidforge"></a>
 </td>
 </tr>
 <tr>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/Alife"><img alt="Alife" src="https://opengraph.githubassets.com/1/KernelSpecter/Alife"></a>
+<a href="https://github.com/KernelSpecter/AirLock"><img alt="AirLock" src="https://opengraph.githubassets.com/1/KernelSpecter/AirLock"></a>
 </td>
 <td width="50%">
 <a href="https://github.com/KernelSpecter/fretwork"><img alt="fretwork" src="https://opengraph.githubassets.com/1/KernelSpecter/fretwork"></a>
@@ -45,76 +44,86 @@ extensions. Everything here runs offline unless the whole point of it is a netwo
 </tr>
 </table>
 
-**[hidforge](https://github.com/KernelSpecter/hidforge)** holds an exact click rate
-from 10 to roughly 10,000 per second and idles at 0% CPU. It learns whatever a button
-actually emits rather than assuming a button number, because side buttons don't
-arrive on a predictable channel and some never reach the OS at all.
+**[marquee](https://github.com/KernelSpecter/marquee)** — one word in a terminal and
+the show plays. It finds the thing, opens mpv, remembers where you stopped, and tells
+Discord and AniList about it.
 
-**[AirLock](https://github.com/KernelSpecter/AirLock)** strips API keys, passwords
-and PII out of text before it reaches an LLM. A CLI you can pipe or hang off a
-pre-commit hook, plus a
+The part I'd point at is how it's put together. What a show *is* comes from catalogs
+that have been steady for years. Where to actually *get* it comes from scrapers, and
+scrapers die. Keeping those two apart is what stops a dead scraper taking search down
+with it. Adding a source is a file in a folder, not a change to the program.
+
+**[hidforge](https://github.com/KernelSpecter/hidforge)** — holds a click rate from
+ten a second up to near ten thousand, and sits at nothing when it's idle. It learns
+what a button really sends instead of guessing at a number, because the side buttons
+don't come in on a tidy channel and some never reach Windows at all.
+
+**[AirLock](https://github.com/KernelSpecter/AirLock)** — takes the keys, passwords
+and personal details out of your text before it reaches an AI. A CLI you can pipe
+into or hang off a commit hook, and a
 [browser extension](https://github.com/KernelSpecter/AirLock-extension) that catches
-the paste itself. Entirely local, no network calls, which is rather the whole point
-of a tool for not leaking things.
+the paste itself. It never goes online, which is rather the point of a thing meant to
+stop you leaking.
 
-**[fretwork](https://kernelspecter.github.io/fretwork/)** is a playable guitar in a
-single HTML file. Six coupled digital waveguides in an AudioWorklet, no recorded
-samples anywhere. It opens in a browser, so it is the quickest thing here to try.
+**[fretwork](https://kernelspecter.github.io/fretwork/)** — a guitar you can play, in
+one HTML file. Six strings worked out as real waveguides, no recordings anywhere. It
+opens in a browser, so it's the quickest thing here to try.
 
-**[nowwatching](https://github.com/KernelSpecter/nowwatching)** puts whatever you are
-watching on your Discord profile: the show's own name, poster art and a live
-countdown. It reads the Windows media session, so there is nothing to enable per site.
-Discord animates a card's progress bar client-side and has no field that means
-stopped, so a paused bar cannot be frozen. It can only be put back where it belongs,
-which it now is every ten seconds.
-[anicli-rpc](https://github.com/KernelSpecter/anicli-rpc) does the same job for anime
-in a terminal, by sitting between ani-cli and mpv without patching either one.
+**[nowwatching](https://github.com/KernelSpecter/nowwatching)** — puts whatever
+you're watching on your Discord profile. The show's name, the poster, a countdown. It
+reads what Windows already knows, so there's nothing to set up site by site.
 
-**[AutoDelete](https://github.com/KernelSpecter/AutoDelete)** puts a timer on the
-messages you send in Discord, per channel, per category or per server, with a live
-countdown and a keep button. Deleting is paced one message at a time and the timer
-only ever runs late, never early, because the failure everyone else ships is a burst
-of deletions that looks exactly like a bot.
+Discord draws that progress bar itself and has no way of saying *stopped*, so a
+paused bar can't be frozen. It can only be put back where it belongs, which it is,
+every ten seconds. [anicli-rpc](https://github.com/KernelSpecter/anicli-rpc) does the
+same job for anime in a terminal, sitting between ani-cli and mpv without touching
+either one.
 
-**[Alife](https://github.com/KernelSpecter/Alife)** grows micro-organisms that learn
-to survive within their own lifetime, with no generational hand-waving, on a single
-CPU core. **[mochi](https://github.com/KernelSpecter/mochi)** is a cat that lives on
-your desktop, watches you work, and expects to be fed.
+**[AutoDelete](https://github.com/KernelSpecter/AutoDelete)** — puts a timer on the
+messages you send in Discord. Per channel, per category, per server, with a countdown
+and a keep button. It deletes one at a time, and it always runs late rather than
+early. The failure everybody else ships is a burst of deleting that looks exactly
+like a bot.
+
+**[Alife](https://github.com/KernelSpecter/Alife)** — little organisms that learn to
+stay alive inside their own lifetime. No breeding, no generations, one CPU core.
+**[mochi](https://github.com/KernelSpecter/mochi)** is a cat that lives on your
+desktop, watches you work, and expects feeding.
 **[Cadence](https://github.com/KernelSpecter/Cadence)** is a to-do app built around
-the more interesting question: why you stop opening to-do apps.
+the better question — why you stop opening to-do apps.
 
 ## Everything here
 
 | Repo | Written in | What it is |
 | --- | --- | --- |
-| [hidforge](https://github.com/KernelSpecter/hidforge) | Rust | Device-agnostic Windows macro engine. Learns what a button emits, replays with real timing |
-| [AirLock](https://github.com/KernelSpecter/AirLock) | Python | Local-first CLI that redacts secrets and PII out of any text before you paste it |
+| [marquee](https://github.com/KernelSpecter/marquee) | Python | One command for anime and film. mpv, resume, Discord presence, AniList sync |
+| [hidforge](https://github.com/KernelSpecter/hidforge) | Rust | Windows macro engine. Learns what a button sends, replays it with real timing |
+| [AirLock](https://github.com/KernelSpecter/AirLock) | Python | Local CLI that takes secrets and personal details out of text before you paste it |
 | [AirLock-extension](https://github.com/KernelSpecter/AirLock-extension) | JavaScript | The same rules in the browser, catching the paste into an AI chat as it happens |
-| [fretwork](https://github.com/KernelSpecter/fretwork) | HTML, Web Audio | A playable guitar in one file. Six coupled waveguides, no samples. [Try it](https://kernelspecter.github.io/fretwork/) |
-| [nowwatching](https://github.com/KernelSpecter/nowwatching) | Python | Discord Rich Presence for anything playing on the machine. No API key |
-| [anicli-rpc](https://github.com/KernelSpecter/anicli-rpc) | Python | Discord Rich Presence for ani-cli. Title, episode, sub or dub, countdown, cover art |
-| [AutoDelete](https://github.com/KernelSpecter/AutoDelete) | TypeScript | Vencord plugin that gives the messages you send a timer, with a keep button |
-| [Alife](https://github.com/KernelSpecter/Alife) | Python | Micro-organisms that learn to survive inside one lifetime, on one CPU core |
-| [mochi](https://github.com/KernelSpecter/mochi) | Python | A cat that lives on your desktop and expects to be fed |
-| [Cadence](https://github.com/KernelSpecter/Cadence) | Android | A to-do list app you would actually come back to |
-| [autoclicker](https://github.com/KernelSpecter/autoclicker) | AutoHotkey | 53 clicks per second, not adjustable |
+| [fretwork](https://github.com/KernelSpecter/fretwork) | HTML, Web Audio | A guitar you can play, in one file. No recordings. [Try it](https://kernelspecter.github.io/fretwork/) |
+| [nowwatching](https://github.com/KernelSpecter/nowwatching) | Python | Discord presence for anything playing on the machine. No API key |
+| [anicli-rpc](https://github.com/KernelSpecter/anicli-rpc) | Python | Discord presence for ani-cli. Title, episode, sub or dub, countdown, cover art |
+| [AutoDelete](https://github.com/KernelSpecter/AutoDelete) | TypeScript | Vencord plugin that gives the messages you send a timer, and a keep button |
+| [Alife](https://github.com/KernelSpecter/Alife) | Python | Organisms that learn to stay alive inside one lifetime, on one CPU core |
+| [mochi](https://github.com/KernelSpecter/mochi) | Python | A cat that lives on your desktop and expects feeding |
+| [Cadence](https://github.com/KernelSpecter/Cadence) | Android | A to-do list you'd actually come back to |
+| [autoclicker](https://github.com/KernelSpecter/autoclicker) | AutoHotkey | 53 clicks a second. Not adjustable |
 | [python-school-work](https://github.com/KernelSpecter/python-school-work) | Python | Coursework, kept in one place |
 | [WordDash-discord-bot-local-deployment-](https://github.com/KernelSpecter/WordDash-discord-bot-local-deployment-) | Python | |
 | [discod-bot-web-deployment](https://github.com/KernelSpecter/discod-bot-web-deployment) | Python | |
 
-## Currently
+## What I'm on lately
 
-Learning cybersecurity properly, rather than by tutorial.
+Learning security properly, rather than off tutorials.
 
-Reading an unreasonable amount of Win32 documentation as a side effect of hidforge:
-Raw Input, HID report descriptors, and exactly how much a `QueryPerformanceCounter`
-spin loop costs you.
+Reading more Win32 documentation than any man ought to, on account of hidforge. Raw
+Input, HID report descriptors, and what a `QueryPerformanceCounter` spin loop really
+costs you.
 
-Local IPC, lately. Discord frames its messages with an 8-byte header, mpv speaks
-line-delimited JSON, and underneath both it is named pipes on Windows or Unix sockets
-on Linux, which are far less interchangeable than they look.
+Getting programs to talk to one another, mostly. Discord puts an 8-byte header on its
+messages, mpv wants JSON a line at a time, and underneath both it's named pipes on
+Windows or Unix sockets on Linux — which look a good deal more alike than they are.
 
-The Windows media session too, which hands you a title, a duration and a timeline for
-anything playing on the machine, and then quietly stops updating that timeline the
-moment the tab goes to the background. Two bugs traced back to reading that silence
-as a pause.
+And the Windows media session, which hands you a title, a length and a timeline for
+anything playing, then quietly stops updating that timeline the moment the tab goes
+to the background. Two bugs came back to me reading that silence as a pause.
