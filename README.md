@@ -89,7 +89,8 @@ stay alive inside their own lifetime. No breeding, no generations, one CPU core.
 **[mochi](https://github.com/KernelSpecter/mochi)** is a cat that lives on your
 desktop, watches you work, and expects feeding.
 **[Cadence](https://github.com/KernelSpecter/Cadence)** is a to-do app built around
-the better question — why you stop opening to-do apps.
+the better question — why you stop opening to-do apps. It's on
+[Google Play](https://play.google.com/store/apps/details?id=com.cadence.todo).
 
 ## Everything here
 
@@ -105,11 +106,8 @@ the better question — why you stop opening to-do apps.
 | [AutoDelete](https://github.com/KernelSpecter/AutoDelete) | TypeScript | Vencord plugin that gives the messages you send a timer, and a keep button |
 | [Alife](https://github.com/KernelSpecter/Alife) | Python | Organisms that learn to stay alive inside one lifetime, on one CPU core |
 | [mochi](https://github.com/KernelSpecter/mochi) | Python | A cat that lives on your desktop and expects feeding |
-| [Cadence](https://github.com/KernelSpecter/Cadence) | Android | A to-do list you'd actually come back to |
+| [Cadence](https://github.com/KernelSpecter/Cadence) | Android | A to-do list you'd actually come back to. [On Google Play](https://play.google.com/store/apps/details?id=com.cadence.todo) |
 | [autoclicker](https://github.com/KernelSpecter/autoclicker) | AutoHotkey | 53 clicks a second. Not adjustable |
-| [python-school-work](https://github.com/KernelSpecter/python-school-work) | Python | Coursework, kept in one place |
-| [WordDash-discord-bot-local-deployment-](https://github.com/KernelSpecter/WordDash-discord-bot-local-deployment-) | Python | |
-| [discod-bot-web-deployment](https://github.com/KernelSpecter/discod-bot-web-deployment) | Python | |
 
 ## What I'm on lately
 
