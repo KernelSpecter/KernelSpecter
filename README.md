@@ -22,23 +22,28 @@ extensions. If it doesn't need the network, it doesn't touch it.</sub>
 <a href="https://github.com/KernelSpecter/marquee"><img alt="marquee" src="https://opengraph.githubassets.com/1/KernelSpecter/marquee"></a>
 </td>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/hidforge"><img alt="hidforge" src="https://opengraph.githubassets.com/1/KernelSpecter/hidforge"></a>
+<a href="https://github.com/KernelSpecter/memo"><img alt="memo" src="https://opengraph.githubassets.com/1/KernelSpecter/memo"></a>
 </td>
 </tr>
 <tr>
+<td width="50%">
+<a href="https://github.com/KernelSpecter/hidforge"><img alt="hidforge" src="https://opengraph.githubassets.com/1/KernelSpecter/hidforge"></a>
+</td>
 <td width="50%">
 <a href="https://github.com/KernelSpecter/AirLock"><img alt="AirLock" src="https://opengraph.githubassets.com/1/KernelSpecter/AirLock"></a>
 </td>
-<td width="50%">
-<a href="https://github.com/KernelSpecter/fretwork"><img alt="fretwork" src="https://opengraph.githubassets.com/1/KernelSpecter/fretwork"></a>
-</td>
 </tr>
 <tr>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/nowwatching"><img alt="nowwatching" src="https://opengraph.githubassets.com/1/KernelSpecter/nowwatching"></a>
+<a href="https://github.com/KernelSpecter/fretwork"><img alt="fretwork" src="https://opengraph.githubassets.com/1/KernelSpecter/fretwork"></a>
 </td>
 <td width="50%">
-<a href="https://github.com/KernelSpecter/AutoDelete"><img alt="AutoDelete" src="https://opengraph.githubassets.com/1/KernelSpecter/AutoDelete"></a>
+<a href="https://github.com/KernelSpecter/nowwatching"><img alt="nowwatching" src="https://opengraph.githubassets.com/1/KernelSpecter/nowwatching"></a>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<a href="https://github.com/KernelSpecter/AutoDelete"><img width="50%" alt="AutoDelete" src="https://opengraph.githubassets.com/1/KernelSpecter/AutoDelete"></a>
 </td>
 </tr>
 </table>
@@ -51,6 +56,17 @@ The part I'd point at is how it's put together. What a show *is* comes from cata
 that have been steady for years. Where to actually *get* it comes from scrapers, and
 scrapers die. Keeping those two apart is what stops a dead scraper taking search down
 with it. Adding a source is a file in a folder, not a change to the program.
+
+**[memo](https://github.com/KernelSpecter/memo)** — put it in front of any Windows
+command. It watches every file the whole process tree reads, checks, lists and
+writes, and if none of that has changed by the next run, the command doesn't run at
+all. memo plays back the output, puts the files back, and exits with the same code.
+Nothing to set up.
+
+The rule it's built around is that it never replays a stale result. If it can't see
+everything a run did, like the network, a 32-bit child, or a file changed underneath
+it, it runs the command for real and keeps nothing. A needless re-run costs a few
+seconds. A wrong replay costs you ever trusting it again.
 
 **[hidforge](https://github.com/KernelSpecter/hidforge)** — holds a click rate from
 ten a second up to near ten thousand, and sits at nothing when it's idle. It learns
@@ -97,6 +113,7 @@ the better question — why you stop opening to-do apps. It's on
 | Repo | Written in | What it is |
 | --- | --- | --- |
 | [marquee](https://github.com/KernelSpecter/marquee) | Python | One command for anime and film. mpv, resume, Discord presence, AniList sync |
+| [memo](https://github.com/KernelSpecter/memo) | Rust | Caches any Windows command and replays it when nothing it read has changed. [Download](https://github.com/KernelSpecter/memo/releases/latest) |
 | [hidforge](https://github.com/KernelSpecter/hidforge) | Rust | Windows macro engine. Learns what a button sends, replays it with real timing |
 | [AirLock](https://github.com/KernelSpecter/AirLock) | Python | Local CLI that takes secrets and personal details out of text before you paste it |
 | [AirLock-extension](https://github.com/KernelSpecter/AirLock-extension) | JavaScript | The same rules in the browser, catching the paste into an AI chat as it happens |
@@ -116,6 +133,12 @@ Learning security properly, rather than off tutorials.
 Reading more Win32 documentation than any man ought to, on account of hidforge. Raw
 Input, HID report descriptors, and what a `QueryPerformanceCounter` spin loop really
 costs you.
+
+Then the layer underneath all that, on account of memo. Everything a program opens
+ends up as an NT path, and not all of those are files. Some are devices, some go
+through the mount point manager. memo treats any it can't map as unknown and won't
+cache the run, which is the right call. For a while it was also the call it made on
+every python and cargo run, which was not.
 
 Getting programs to talk to one another, mostly. Discord puts an 8-byte header on its
 messages, mpv wants JSON a line at a time, and underneath both it's named pipes on
